@@ -1,0 +1,33 @@
+node {
+    stage('Git Checkout')
+    {
+        git 'https://github.com/dasrinivas/myprojet.git'
+    }
+def project_path = 'jenkins2/jenkins2-course-spring-boot/spring-boot-samples/spring-boot-sample-atmosphere'
+    dir(project_path)
+    {
+        stage('maven Clean')
+        {
+        sh label: 'Clean', script: 'mvn clean'
+        }
+        stage('maven Compile')
+        {
+        sh label: 'Compile', script: 'mvn compile'
+        }
+        stage('maven Test')
+        {
+        sh label: 'Test', script: 'mvn test'
+        }
+        stage('maven Package')
+        {
+        sh label: 'package', script: 'mvn package'
+        }
+        stage('Archive jar')
+        {
+        archive 'target/*.jar'
+        }
+        stage('Deploy Code into DockerBased Staging Env.') {
+		sh label: 'Docker-Compose', script: 'docker-compose up -d --build'
+		}
+}
+}
