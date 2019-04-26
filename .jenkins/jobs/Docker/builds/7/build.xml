@@ -1,0 +1,161 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.32">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>dasrinivas</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.13">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.9.3">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.7.7">
+              <sha1>0cbf9c4c349e119b706eb8baa9b9cdab6935cdb5</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>7</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://github.com/dasrinivas/myprojet.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.9.3">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/tmp/jenkins/workspace/Docker</ws>
+    </hudson.plugins.git.GitTagAction>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@2.7">
+      <revisionStates>
+        <entry>
+          <string>git https://github.com/dasrinivas/myprojet.git</string>
+          <hudson.scm.SCMRevisionState_-None/>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+  </actions>
+  <queueId>59</queueId>
+  <timestamp>1556192446197</timestamp>
+  <startTime>1556192446200</startTime>
+  <result>FAILURE</result>
+  <duration>302517</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>node {
+    stage(&apos;Git Checkout&apos;)
+    {
+        git &apos;https://github.com/dasrinivas/myprojet.git&apos;
+    }
+def project_path = &apos;jenkins2/jenkins2-course-spring-boot/spring-boot-samples/spring-boot-sample-atmosphere&apos;
+    dir(project_path)
+    {
+        stage(&apos;maven Clean&apos;)
+        {
+        sh label: &apos;Clean&apos;, script: &apos;mvn clean&apos;
+        }
+        stage(&apos;maven Compile&apos;)
+        {
+        sh label: &apos;Compile&apos;, script: &apos;mvn compile&apos;
+        }
+        stage(&apos;maven Test&apos;)
+        {
+        sh label: &apos;Test&apos;, script: &apos;mvn test&apos;
+        }
+        stage(&apos;maven Package&apos;)
+        {
+        sh label: &apos;package&apos;, script: &apos;mvn package&apos;
+        }
+        stage(&apos;Archive jar&apos;)
+        {
+        archive &apos;target/*.jar&apos;
+        }
+        stage(&apos;Deploy Code into DockerBased Staging Env.&apos;) {
+		sh label: &apos;Docker-Compose&apos;, script: &apos;docker-compose up -d --build&apos;
+		}
+}
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>153840083</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>251837937</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>1229950776</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>335822376</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>317781798</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>46</iota>
+    <head>1:46</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.3">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>https://github.com/dasrinivas/myprojet.git</url>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches class="singleton-list">
+          <hudson.plugins.git.BranchSpec>
+            <name>*/master</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.LocalBranch>
+            <localBranch>master</localBranch>
+          </hudson.plugins.git.extensions.impl.LocalBranch>
+        </extensions>
+      </scm>
+      <node>worker1</node>
+      <workspace>/tmp/jenkins/workspace/Docker</workspace>
+      <changelogFile>/root/.jenkins/jobs/Docker/builds/7/changelog0.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

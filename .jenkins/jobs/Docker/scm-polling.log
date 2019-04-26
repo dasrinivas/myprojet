@@ -1,0 +1,10 @@
+Started on Apr 25, 2019 11:50:00 AM
+Using strategy: Default
+[poll] Last Built Revision: Revision 0cbf9c4c349e119b706eb8baa9b9cdab6935cdb5 (refs/remotes/origin/master)
+No credentials specified
+ > git --version # timeout=10
+ > git ls-remote -h https://github.com/dasrinivas/myprojet.git # timeout=10
+Found 3 remote heads on https://github.com/dasrinivas/myprojet.git
+[poll] Latest remote head revision on refs/heads/master is: 0cbf9c4c349e119b706eb8baa9b9cdab6935cdb5 - already built by 7
+Done. Took 1.6 sec
+No changes

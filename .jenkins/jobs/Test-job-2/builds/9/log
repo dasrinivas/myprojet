@@ -1,0 +1,13 @@
+Started by upstream project "[8mha:////4H/HdViWbI/zvN04639uw9r2iTmzZL3qHVOI4GHWaprkAAAAnB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYB/az8JP2Q1OISXa/8JF1DfQBZsr4NxQAAAA==[0mTest-Job-1" build number [8mha:////4LnlYo1khDs5a2GflRdLkwwbraqwEyoEF2LAZ9TRrdSZAAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAwmoBn6WflJ+iGpxSW6XvlJuob6hgYAEzy8IscAAAA=[0m10
+originally caused by:
+ Started by user [8mha:////4JTeLLavzZScPqMH/4xl33XcoNs+BwRNiD7bm7jnMIY1AAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyeEgYB/dLi1CL9lMRioP7MssRiAG+f7rbFAAAA[0mD A Srinivas
+Building in workspace /root/.jenkins/workspace/Test-job-2
+[Test-job-2] $ /bin/sh -xe /tmp/jenkins3753477463917433005.sh
++ pwd
+/root/.jenkins/workspace/Test-job-2
++ ls -lart
+total 8
+drwxr-xr-x 2 root root 4096 Apr 23 05:44 .
+drwxr-xr-x 5 root root 4096 Apr 23 05:46 ..
+Triggering a new build of [8mha:////4MTTJab6O3eWerRLGSPd/4WkxuT3DTU4DQEv4YWUqT1KAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYB/az8JP2Q1OISXSBD11gfAO3VJDjFAAAA[0mTest-job-3
+Finished: SUCCESS
